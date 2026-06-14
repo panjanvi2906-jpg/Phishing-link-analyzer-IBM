@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHISH_SHIELD // Link Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">PHISH<span> SHIELD</span></div>
+           
+        </header>
+
+        <main>
+            <section class="scanner-box">
+                <h1>Phishing Link Analyzer</h1>
+                <p class="subtitle">Inspect real-time URL vulnerabilities., domain mutations, and metadata anomalies before interacting.</p>
+                
+                <form id="scanForm" class="scan-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="urlInput" placeholder="Enter target URL to analyze (e.g., http://secure-login-paypal.com)..." required>
+                        <div class="input-glow"></div>
+                    </div>
+                    <button type="submit" id="scanBtn">Execute Scan</button>
+                </form>
+            </section>
+
+            <section id="resultsSection" class="results-box hidden">
+                <div class="results-header">
+                    <h2>Scan Analysis Report</h2>
+                    <span id="timestamp" class="mono-text">TIMESTAMP: --</span>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card metric-card">
+                        <h3>Threat Level Verdict</h3>
+                        <div id="verdictText" class="verdict-banner">SAFE</div>
+                        <div class="score-container">
+                            <span id="scoreNumber">0</span><span class="max-score">/100 Threat Index</span>
+                        </div>
+                    </div>
+
+                    <div class="card diagnostics-card">
+                        <h3>Heuristic Analysis Flags</h3>
+                        <ul id="flagsList" class="flags-list">
+                            </ul>
+                    </div>
+                </div>
+                
+                <div class="target-display">
+                    <span class="label">Target:</span>
+                    <span id="targetUrlDisplay" class="mono-text"></span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
